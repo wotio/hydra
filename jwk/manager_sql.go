@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"github.com/Sirupsen/logrus"
 	"github.com/jmoiron/sqlx"
-	"github.com/ory-am/hydra/pkg"
+	"github.com/ory/hydra/pkg"
 	"github.com/pkg/errors"
 	"github.com/rubenv/sql-migrate"
 	"github.com/square/go-jose"

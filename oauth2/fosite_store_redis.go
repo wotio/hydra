@@ -6,8 +6,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ory-am/fosite"
-	"github.com/ory-am/hydra/client"
+	"github.com/ory/fosite"
+	"github.com/ory/hydra/client"
 	"github.com/pkg/errors"
 	"golang.org/x/net/context"
 	"gopkg.in/redis.v5"

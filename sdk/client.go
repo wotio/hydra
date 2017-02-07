@@ -6,13 +6,13 @@ import (
 	"net/url"
 	"os"
 
-	"github.com/ory-am/hydra/client"
-	"github.com/ory-am/hydra/jwk"
-	hoauth2 "github.com/ory-am/hydra/oauth2"
-	"github.com/ory-am/hydra/pkg"
-	"github.com/ory-am/hydra/policy"
-	"github.com/ory-am/hydra/warden"
-	"github.com/ory-am/hydra/warden/group"
+	"github.com/ory/hydra/client"
+	"github.com/ory/hydra/jwk"
+	hoauth2 "github.com/ory/hydra/oauth2"
+	"github.com/ory/hydra/pkg"
+	"github.com/ory/hydra/policy"
+	"github.com/ory/hydra/warden"
+	"github.com/ory/hydra/warden/group"
 	"golang.org/x/net/context"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/clientcredentials"
@@ -62,7 +62,7 @@ type Client struct {
 
 // Connect instantiates a new client to communicate with Hydra.
 //
-//  import "github.com/ory-am/hydra/sdk"
+//  import "github.com/ory/hydra/sdk"
 //
 //  var hydra, err = sdk.Connect(
 // 	sdk.ClientID("client-id"),

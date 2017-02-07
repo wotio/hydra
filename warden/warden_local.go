@@ -5,11 +5,11 @@ import (
 	"time"
 
 	"github.com/Sirupsen/logrus"
-	"github.com/ory-am/fosite"
-	"github.com/ory-am/hydra/firewall"
-	"github.com/ory-am/hydra/oauth2"
-	"github.com/ory-am/hydra/warden/group"
-	"github.com/ory-am/ladon"
+	"github.com/ory/fosite"
+	"github.com/ory/hydra/firewall"
+	"github.com/ory/hydra/oauth2"
+	"github.com/ory/hydra/warden/group"
+	"github.com/ory/ladon"
 	"golang.org/x/net/context"
 	"github.com/pkg/errors"
 )

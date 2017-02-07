@@ -21,7 +21,7 @@ func (o *Handler) DefaultConsentHandler(w http.ResponseWriter, r *http.Request, 
 	environment variable.
 </p>
 <p>
-	If you are an administrator, please read <a href="https://ory-am.gitbooks.io/hydra/content/oauth2.html">
+	If you are an administrator, please read <a href="https://ory.gitbooks.io/hydra/content/oauth2.html">
 	the guide</a> to understand what you need to do. If you are a user, please contact the administrator.
 </p>
 </body>

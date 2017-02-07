@@ -2,7 +2,7 @@
 
 Connect the SDK to Hydra:
 ```go
-import "github.com/ory-am/hydra/sdk"
+import "github.com/ory/hydra/sdk"
 
 var hydra, err = sdk.Connect(
     sdk.ClientID("client-id"),
@@ -11,10 +11,10 @@ var hydra, err = sdk.Connect(
 )
 ```
 
-Manage OAuth Clients using [`ory-am/hydra/client.HTTPManager`](/client/manager_http.go):
+Manage OAuth Clients using [`ory/hydra/client.HTTPManager`](/client/manager_http.go):
 
 ```go
-import "github.com/ory-am/hydra/client"
+import "github.com/ory/hydra/client"
 
 // Create a new OAuth2 client
 var newClient = client.Client{
@@ -35,9 +35,9 @@ var err = hydra.Client.DeleteClient(newClient.ID)
 var clients, err = hydra.Client.GetClients()
 ```
 
-Manage policies using [`ory-am/hydra/policy.HTTPManager`](policy/manager_http.go):
+Manage policies using [`ory/hydra/policy.HTTPManager`](policy/manager_http.go):
 ```go
-import "github.com/ory-am/ladon"
+import "github.com/ory/ladon"
 
 // Create a new policy
 // allow user to view his/her own photos
@@ -62,7 +62,7 @@ err := hydra.Policy.Delete("1234")
 policies, err := hydra.Policy.FindPoliciesForSubject("bob")
 ```
 
-Manage JSON Web Keys using [`ory-am/hydra/jwk.HTTPManager`](jwk/manager_http.go):
+Manage JSON Web Keys using [`ory/hydra/jwk.HTTPManager`](jwk/manager_http.go):
 
 ```go
 // Generate new key set
@@ -75,11 +75,11 @@ var keySet, err = hydra.JWK.GetKeySet("app-tls-keys")
 var err = hydra.JWK.DeleteKeySet("app-tls-keys")
 ```
 
-Validate access token, uses [`ory-am/hydra/warden.HTTPWarden`](warden/warden_http.go):
+Validate access token, uses [`ory/hydra/warden.HTTPWarden`](warden/warden_http.go):
 
 ```go
 import "golang.org/x/net/context"
-import "github.com/ory-am/hydra/firewall"
+import "github.com/ory/hydra/firewall"
 
 func anyHttpHandler(w http.ResponseWriter, r *http.Request) {    
     // Check if a token is valid and the token's subject fulfills the policy based access request.
@@ -88,11 +88,11 @@ func anyHttpHandler(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-Validate requests with the Warden, uses [`ory-am/hydra/warden.HTTPWarden`](warden/warden_http.go):
+Validate requests with the Warden, uses [`ory/hydra/warden.HTTPWarden`](warden/warden_http.go):
 
 ```go
 import "golang.org/x/net/context"
-import "github.com/ory-am/hydra/firewall"
+import "github.com/ory/hydra/firewall"
 
 func anyHttpHandler(w http.ResponseWriter, r *http.Request) {
     // Check if a token is valid and the token's subject fulfills the policy based access request.

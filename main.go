@@ -4,7 +4,7 @@ import (
 	"os"
 
 	"github.com/Sirupsen/logrus"
-	"github.com/ory-am/hydra/cmd"
+	"github.com/ory/hydra/cmd"
 	"github.com/pkg/profile"
 )
 

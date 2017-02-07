@@ -4,7 +4,7 @@ import (
 	"net/url"
 	"path"
 
-	"github.com/ory-am/common/pkg"
+	"github.com/ory/common/pkg"
 )
 
 func CopyURL(u *url.URL) *url.URL {

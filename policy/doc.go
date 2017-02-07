@@ -1,9 +1,9 @@
 // Package policy offers management capabilities for access control policies.
 // To read up on policies, go to:
 //
-// - https://github.com/ory-am/ladon
+// - https://github.com/ory/ladon
 //
-// - https://ory-am.gitbooks.io/hydra/content/policy.html
+// - https://ory.gitbooks.io/hydra/content/policy.html
 //
 // Contains source files:
 //

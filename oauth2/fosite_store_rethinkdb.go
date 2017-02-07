@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/Sirupsen/logrus"
-	"github.com/ory-am/fosite"
-	"github.com/ory-am/hydra/client"
-	"github.com/ory-am/hydra/pkg"
+	"github.com/ory/fosite"
+	"github.com/ory/hydra/client"
+	"github.com/ory/hydra/pkg"
 	"github.com/pkg/errors"
 	"golang.org/x/net/context"
 	r "gopkg.in/dancannon/gorethink.v2"

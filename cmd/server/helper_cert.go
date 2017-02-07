@@ -10,9 +10,9 @@ import (
 	"time"
 
 	"github.com/Sirupsen/logrus"
-	"github.com/ory-am/hydra/config"
-	"github.com/ory-am/hydra/jwk"
-	"github.com/ory-am/hydra/pkg"
+	"github.com/ory/hydra/config"
+	"github.com/ory/hydra/jwk"
+	"github.com/ory/hydra/pkg"
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"

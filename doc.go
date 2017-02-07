@@ -4,5 +4,5 @@
 //
 // Hydra implements the flows described in OAuth2 and OpenID Connect 1.0 without forcing you to use a "Hydra User Management" or some template engine or a predefined front-end. Instead it relies on HTTP redirection and cryptographic methods to verify user consent allowing you to use Hydra with any authentication endpoint, be it authboss, auth0.com or your proprietary PHP authentication.
 //
-// The official repository is located at https://github.com/ory-am/hydra
+// The official repository is located at https://github.com/ory/hydra
 package main

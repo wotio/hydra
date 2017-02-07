@@ -113,16 +113,16 @@ imports:
   subpackages:
   - libcontainer/system
   - libcontainer/user
-- name: github.com/ory-am/common
+- name: github.com/ory/common
   version: eaf2f2a2e18295ffc4e89d07a9556903d22b4e79
   subpackages:
   - compiler
   - env
   - pkg
   - rand/sequence
-- name: github.com/ory-am/dockertest
+- name: github.com/ory/dockertest
   version: 8445a82f8da6067ffecbb06e3f9fa2857f3bf9df
-- name: github.com/ory-am/fosite
+- name: github.com/ory/fosite
   version: 7b94f470bede7cf5e94d11e05aa3364d0db75fe2
   subpackages:
   - compose
@@ -131,7 +131,7 @@ imports:
   - storage
   - token/hmac
   - token/jwt
-- name: github.com/ory-am/ladon
+- name: github.com/ory/ladon
   version: 511d561a9a22e6f1c9eda4859673721c56375a23
 - name: github.com/pborman/uuid
   version: a97ce2ca70fa5a848076093f05e639a89ca34d06
@@ -228,7 +228,7 @@ imports:
   - types
 - name: gopkg.in/gorp.v1
   version: c87af80f3cc5036b55b83d77171e156791085e2e
-- name: gopkg.in/ory-am/dockertest.v3
+- name: gopkg.in/ory/dockertest.v3
   version: e4828e807797a7641fcd457716870dfc2f9e82ff
 - name: gopkg.in/redis.v5
   version: 8fcba2ea878201b70c5a63dd416141d4ddbc601a

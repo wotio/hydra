@@ -6,13 +6,13 @@ In this example, you will set up Hydra, a Postgres instance and an exemplary ide
 
 <img alt="Running the example" align="right" width="35%" src="images/run-the-example.gif">
 
-Install [Docker and Docker Compose](https://github.com/ory-am/hydra#installation) and either clone the Hydra git repository,
-download [this zip file](https://github.com/ory-am/hydra/archive/master.zip) or use `go get github.com/ory-am/hydra` if you have Go installed on you system.
+Install [Docker and Docker Compose](https://github.com/ory/hydra#installation) and either clone the Hydra git repository,
+download [this zip file](https://github.com/ory/hydra/archive/master.zip) or use `go get github.com/ory/hydra` if you have Go installed on you system.
 
 We will use a dummy password as the system secret: `SYSTEM_SECRET=passwordtutorialpasswordtutorial`. Use a very secure secret in production. 
 
 ```
-$ git clone https://github.com/ory-am/hydra.git
+$ git clone https://github.com/ory/hydra.git
 $ cd hydra
 $ SYSTEM_SECRET=passwordtutorial DOCKER_IP=localhost docker-compose up --build
 Starting hydra_mysqld_1
@@ -27,7 +27,7 @@ Next, let us manage the host process. You can use the Hydra CLI by ssh'ing to th
 
 ```
 $ docker exec -i -t hydra_hydra_1 /bin/bash
-root@b4403bb4147f:/go/src/github.com/ory-am/hydra#
+root@b4403bb4147f:/go/src/github.com/ory/hydra#
 ```
 
 Let's start by creating a new client:

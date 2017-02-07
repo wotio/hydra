@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/Sirupsen/logrus"
-	"github.com/ory-am/fosite"
+	"github.com/ory/fosite"
 	"github.com/pkg/errors"
 	"reflect"
 )

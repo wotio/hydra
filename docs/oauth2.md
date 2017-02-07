@@ -117,7 +117,7 @@ The challenge claims are:
 * **redir:** Where the consent endpoint should redirect the user agent to, once consent is given.
 
 Hydra signs the consent response token with a key called `hydra.consent.challenge`.
-The public key can be looked up via the [Key Manager](https://ory-am.gitbooks.io/hydra/content/jwk.html):
+The public key can be looked up via the [Key Manager](https://ory.gitbooks.io/hydra/content/jwk.html):
 
 ```
 https://192.168.99.100:4444/keys/hydra.consent.challenge/public

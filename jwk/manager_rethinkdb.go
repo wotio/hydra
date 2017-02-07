@@ -10,7 +10,7 @@ import (
 	"fmt"
 
 	"github.com/Sirupsen/logrus"
-	"github.com/ory-am/hydra/pkg"
+	"github.com/ory/hydra/pkg"
 	"github.com/pkg/errors"
 	"github.com/square/go-jose"
 	"golang.org/x/net/context"

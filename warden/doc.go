@@ -1,8 +1,8 @@
 // Package warden decides if access requests should be allowed or denied. In a scientific taxonomy, the warden
-// is classified as a Policy Decision Point. THe warden's primary goal is to implement `github.com/ory-am/hydra/firewall.Firewall`.
+// is classified as a Policy Decision Point. THe warden's primary goal is to implement `github.com/ory/hydra/firewall.Firewall`.
 // To read up on the warden, go to:
 //
-// - https://ory-am.gitbooks.io/hydra/content/policy.html
+// - https://ory.gitbooks.io/hydra/content/policy.html
 //
 // - http://docs.hdyra.apiary.io/#reference/warden:-access-control-for-resource-providers
 //

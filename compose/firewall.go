@@ -4,15 +4,15 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/ory-am/fosite"
-	foauth2 "github.com/ory-am/fosite/handler/oauth2"
-	"github.com/ory-am/hydra/firewall"
-	. "github.com/ory-am/hydra/oauth2"
-	"github.com/ory-am/hydra/pkg"
-	"github.com/ory-am/hydra/warden"
-	"github.com/ory-am/ladon"
+	"github.com/ory/fosite"
+	foauth2 "github.com/ory/fosite/handler/oauth2"
+	"github.com/ory/hydra/firewall"
+	. "github.com/ory/hydra/oauth2"
+	"github.com/ory/hydra/pkg"
+	"github.com/ory/hydra/warden"
+	"github.com/ory/ladon"
 	"golang.org/x/oauth2"
-	"github.com/ory-am/hydra/warden/group"
+	"github.com/ory/hydra/warden/group"
 )
 
 func NewFirewall(issuer string, subject string, scopes fosite.Arguments, p ...ladon.Policy) (firewall.Firewall, *http.Client) {

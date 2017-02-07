@@ -6,8 +6,8 @@ import (
 
 	"github.com/Sirupsen/logrus"
 	"github.com/imdario/mergo"
-	"github.com/ory-am/fosite"
-	"github.com/ory-am/hydra/pkg"
+	"github.com/ory/fosite"
+	"github.com/ory/hydra/pkg"
 	"github.com/pborman/uuid"
 	"github.com/pkg/errors"
 	"golang.org/x/net/context"

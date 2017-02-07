@@ -13,7 +13,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jmoiron/sqlx"
 	_ "github.com/lib/pq"
-	"github.com/ory-am/hydra/pkg"
+	"github.com/ory/hydra/pkg"
 	"github.com/pkg/errors"
 	"github.com/spf13/viper"
 	r "gopkg.in/dancannon/gorethink.v2"

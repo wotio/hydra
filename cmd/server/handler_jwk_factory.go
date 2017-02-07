@@ -3,9 +3,9 @@ package server
 import (
 	"github.com/Sirupsen/logrus"
 	"github.com/julienschmidt/httprouter"
-	"github.com/ory-am/hydra/config"
-	"github.com/ory-am/hydra/herodot"
-	"github.com/ory-am/hydra/jwk"
+	"github.com/ory/hydra/config"
+	"github.com/ory/hydra/herodot"
+	"github.com/ory/hydra/jwk"
 	"github.com/square/go-jose"
 	"golang.org/x/net/context"
 	r "gopkg.in/dancannon/gorethink.v2"

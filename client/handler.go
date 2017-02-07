@@ -6,10 +6,10 @@ import (
 	"net/http"
 
 	"github.com/julienschmidt/httprouter"
-	"github.com/ory-am/common/rand/sequence"
-	"github.com/ory-am/hydra/firewall"
-	"github.com/ory-am/hydra/herodot"
-	"github.com/ory-am/ladon"
+	"github.com/ory/common/rand/sequence"
+	"github.com/ory/hydra/firewall"
+	"github.com/ory/hydra/herodot"
+	"github.com/ory/ladon"
 	"github.com/pkg/errors"
 )
 

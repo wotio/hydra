@@ -1,7 +1,7 @@
 // Package SDK offers convenience functions for Go code around Hydra's HTTP APIs.
 //
-//  import "github.com/ory-am/hydra/sdk"
-//  import "github.com/ory-am/hydra/client"
+//  import "github.com/ory/hydra/sdk"
+//  import "github.com/ory/hydra/client"
 //
 //  var hydra, err = sdk.Connect(
 // 	sdk.ClientID("client-id"),
