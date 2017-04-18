@@ -1,4 +1,4 @@
 FROM debian:jessie
 COPY bin/hydra /go/bin/hydra
-ENTRYPOINT /usr/local/bin/hydra
+ENTRYPOINT /go/bin/hydra
 CMD ["host"]
