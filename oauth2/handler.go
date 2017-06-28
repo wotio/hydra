@@ -3,15 +3,8 @@ package oauth2
 import (
 	"net/http"
 	"net/url"
-	"crypto/tls"
-	"crypto/x509"
-	"os"
-	"bytes"
-	"fmt"
-	"io/ioutil"
 
 	"encoding/json"
-	"github.com/Sirupsen/logrus"
 	"github.com/gorilla/sessions"
 	"github.com/julienschmidt/httprouter"
 	"github.com/ory-am/fosite"
@@ -36,82 +29,6 @@ const (
 	consentCookieName = "consent_session"
 )
 
-
-func GetWotioRootCA() ([]byte) {
-	var cert []byte
-	certPath := os.Getenv("WOTIO_CA_CERT_PATH")
-	if certPath != "" {
-		var err error
-		cert, err = ioutil.ReadFile(certPath)
-		if err != nil {
-			logrus.Warnln("Could not read wotio certificate: ", err)
-		}
-	}
-	return cert
-}
-
-func GetWotioCertPool(cert []byte) (*x509.CertPool) {
-	pool := x509.NewCertPool()
-	if cert != nil {
-		pool.AppendCertsFromPEM(cert)
-	}
-	return pool
-}
-
-
-func WotioCreateToken(token string, expires_in int64) (error) {
-	WotioToken := os.Getenv("WOTIO_TOKEN")
-	WotioTokenUrl := os.Getenv("WOTIO_TOKEN_URL")
-	if WotioTokenUrl == "" {
-		return errors.New("WOTIO_TOKEN_URL is not set.")
-	}
-	start:= time.Now()
-	end := start.Add(time.Duration(expires_in)*time.Second)
-	json := fmt.Sprintf("{ \"token\": \"%s\", \"start\": \"%s\", \"end\": \"%s\" }", token, start.UTC().Format(time.RFC3339), end.UTC().Format(time.RFC3339))
-	logrus.Debugln("WotioCreateToken:",json)
-
-	req, err := http.NewRequest("POST", WotioTokenUrl, bytes.NewBufferString(json))
-	req.Header.Set("Content-Type", "application/json")
-	req.Header.Set("Authorization", "Bearer " + WotioToken)
-	client := &http.Client{Transport: &http.Transport{TLSClientConfig: &tls.Config{RootCAs: GetWotioCertPool(GetWotioRootCA())}}}
-	resp, err := client.Do(req)
-	if err != nil {
-		logrus.Error(err)
-		return err
-	}
-	defer resp.Body.Close()
-	body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		logrus.Error(err)
-		return err
-	}
-	logrus.Debugln("WotioCreateToken response:", resp.Status, string(body))
-	return nil
-}
-
-func WotioAssignToken(token string, userid string) (error) {
-	WotioToken := os.Getenv("WOTIO_TOKEN")
-	WotioAssignmentUrl := os.Getenv("WOTIO_ASSIGNMENT_URL")
-	if WotioAssignmentUrl == "" {
-		return errors.New("WOTIO_TOKEN_URL is not set.")
-	}
-	json := fmt.Sprintf("{ \"token\": \"%s\", \"userid\": \"%s\"}", token, userid)
-	logrus.Debugln("WotioAssignToken:",json)
-
-	req, err := http.NewRequest("POST", WotioAssignmentUrl, bytes.NewBufferString(json))
-	req.Header.Set("Authorization", "Bearer " + WotioToken)
-	req.Header.Set("Content-Type", "application/json")
-	client := &http.Client{Transport: &http.Transport{TLSClientConfig: &tls.Config{RootCAs: GetWotioCertPool(GetWotioRootCA())}}}
-	resp, err := client.Do(req)
-	if err != nil {
-		logrus.Error(err)
-		return err
-	}
-	defer resp.Body.Close()
-	body, _ := ioutil.ReadAll(resp.Body)
-	logrus.Debugln("WotioAssignToken response:", resp.Status, string(body))
-	return nil
-}
 
 type Handler struct {
 	OAuth2  fosite.OAuth2Provider
@@ -206,14 +123,14 @@ func (h *Handler) TokenHandler(w http.ResponseWriter, r *http.Request, _ httprou
 		return
 	}
 
-	if session.Extra["user_id"] != nil {
+	if session.Extra["userid"] != nil {
 		err = WotioCreateToken(accessResponse.GetAccessToken(), accessResponse.GetExtra("expires_in").(int64))
 		if err != nil {
 			pkg.LogError(err)
 			h.OAuth2.WriteAccessError(w, accessRequest, err)
 			return
 		}
-		err = WotioAssignToken(accessResponse.GetAccessToken(), session.Extra["user_id"].(string))
+		err = WotioSetTokenScopes(accessResponse.GetAccessToken(), accessRequest.GetGrantedScopes())
 		if err != nil {
 			pkg.LogError(err)
 			h.OAuth2.WriteAccessError(w, accessRequest, err)
